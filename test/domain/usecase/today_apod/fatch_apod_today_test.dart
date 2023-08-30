@@ -35,5 +35,13 @@ void main() {
 
   /// Retorna falha
 
-  test("Deve retornar um Failure no lado esquerdo do Either", () {});
+  test("Deve retornar um Failure no lado esquerdo do Either", () async {
+    //cenario
+    when(repository.fetchApodToday())
+        .thenAnswer((_) async => Left<Failure, Apod>(tNoConnection()));
+    //ação
+    final result = await usecase(NoParamenter());
+    // esperado
+    expect(result, Left<Failure, Apod>(tNoConnection()));
+  });
 }

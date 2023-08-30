@@ -1,3 +1,4 @@
+import 'package:astronomy_picture/core/failure.dart';
 import 'package:astronomy_picture/domain/entities/apod.dart';
 
 Apod Function() tApod = () => Apod(
@@ -9,3 +10,5 @@ Apod Function() tApod = () => Apod(
     title: "The Great Nebula in Orion",
     url: "https://apod.nasa.gov/apod/image/0409/orion_seip.jpg",
     hdurl: "https;//apod.nasa.gov/apod/image/0409/orion_seip_big.jpg");
+
+Failure Function() tNoConnection = () => NoConnection();
